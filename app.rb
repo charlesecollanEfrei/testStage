@@ -9,6 +9,19 @@ require "./models.rb"
 
 set :database, "sqlite3:miniblog.sqlite3"
 
+helpers do
+  def protected!
+    return if authorized?
+    headers['WWW-Authenticate'] = 'Basic realm="Restricted Area"'
+    halt 401, "Not authorized\n"
+  end
+
+  def authorized?
+    @auth ||=  Rack::Auth::Basic::Request.new(request.env)
+    @auth.provided? and @auth.basic? and @auth.credentials and @auth.credentials == ['admin', 'admin']
+  end
+end
+
 get '/' do
 	@articles = Article.all
 	erb :index
@@ -45,4 +58,10 @@ end
 post '/comment/:id' do
 	@comment = Comment.create(content: params[:content], articles_id: params[:id])
 	redirect '/article/'+params[:id]
+end
+
+get '/protected' do
+  protected!
+  @articles = Article.all
+  erb :index
 end

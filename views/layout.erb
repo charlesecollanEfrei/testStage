@@ -1,94 +1,96 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Post App</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-  <link rel="stylesheet" href="style.css" type="text/css" />
+  <head>
+    <title>Post App</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css" type="text/css" />
 
-  <style>
-  body{
-    background-color: #56739A;
-    font-family: Calibri;
-  }
+    <style>
+        body{
+          background-color: #56739A;
+          font-family: Calibri;
+        }
 
-  nav{
-    width: 90%;
-    margin: 3% auto auto auto ;
-    padding: 1% 1% 1% 1%;
-    height: auto;
-    background-color: black;
-    text-align: center;
-    border-bottom:1px solid black;
-    color: white;
-  }
+        nav{
+          width: 90%;
+          margin: 3% auto auto auto ;
+          padding: 1% 1% 1% 1%;
+          height: auto;
+          background-color: black;
+          text-align: center;
+          border-bottom:1px solid black;
+          color: white;
+        }
 
-  nav ul {
-    list-style: none;
-    background-color: #444;
-    text-align: center;
-    padding: 0;
-    margin: 0;
-  }
+        nav ul {
+          list-style: none;
+          background-color: #444;
+          text-align: center;
+          padding: 0;
+          margin: 0;
+        }
 
-  nav li {
-    line-height: 250%;
-    border-bottom: 1px solid #888;
-  }
+        nav li {
+          line-height: 250%;
+          border-bottom: 1px solid #888;
+        }
 
-  nav a {
-    text-decoration: none;
-    color: #fff;
-    display: block;
-    transition: .3s background-color;
-  }
+        nav a {
+          text-decoration: none;
+          color: #fff;
+          display: block;
+          transition: .3s background-color;
+        }
 
-  nav a:hover {
-    background-color: #005f5f;
-  }
+        nav a:hover {
+          background-color: #005f5f;
+        }
 
-  section{
-    width: 90%;
-    margin: 0 auto auto auto;
-    padding: 3% 1% 5% 1%;
-    height: auto;
-    background: linear-gradient(70deg, #C9D4E9, #FFFFFF);
-    text-align: center;
-    overflow : hidden;
-  }
+        section{
+          width: 90%;
+          margin: 0 auto auto auto;
+          padding: 3% 1% 5% 1%;
+          height: auto;
+          background: linear-gradient(70deg, #C9D4E9, #FFFFFF);
+          text-align: center;
+          overflow : hidden;
+        }
 
-  article{
-    padding: 1% 1% 1% 1%;
-    margin-top: 2%;
-  }
+        article{
+          padding: 1% 1% 1% 1%;
+          margin-top: 2%;
+        }
 
-  article form label{
-    color: black;
-    width: 100%;
-    float: left;
-  }
+        article form label{
+          color: black;
+          width: 100%;
+          float: left;
+        }
 
-  hr {
-    border-top: 2px solid #000000;
-  }
+        hr {
+          border-top: 2px solid #000000;
+        }
 
-  </style>
+    </style>
 
-</head>
+  </head>
 
 
-<body>
+  <body>
 
-  <nav>
-    <ul>
-      <li><a href="/">Home</a></li>
-    </ul>
-  </nav>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/protected">Admin</a></li>
+      </ul>
+    </nav>
 
-  <section>
-    <%= yield %>
-  </section>
+    <section>
+      <%= yield %>
+    </section>
+
+  </body>
   
-</body>
 </html>
